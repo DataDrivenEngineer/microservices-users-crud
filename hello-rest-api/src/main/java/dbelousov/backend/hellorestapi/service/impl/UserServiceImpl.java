@@ -5,6 +5,8 @@ import dbelousov.backend.hellorestapi.io.repositories.UserRepository;
 import dbelousov.backend.hellorestapi.service.UserService;
 import dbelousov.backend.hellorestapi.shared.Utils;
 import dbelousov.backend.hellorestapi.shared.dto.UserDto;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
@@ -17,6 +19,8 @@ import java.util.ArrayList;
 
 @Service
 public class UserServiceImpl implements UserService {
+
+    Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Autowired
     private UserRepository userRepository;
@@ -57,6 +61,43 @@ public class UserServiceImpl implements UserService {
 
         UserDto returnValue = new UserDto();
         BeanUtils.copyProperties(userEntity, returnValue);
+        return returnValue;
+    }
+
+    @Override
+    public UserDto updateUser(UserDto userDto, String id) {
+        UserEntity userEntity = userRepository.findByUserId(id);
+
+        if (userEntity == null) throw new UsernameNotFoundException(id);
+
+        if (userDto.getFirstName() != null) {
+            userEntity.setFirstName(userDto.getFirstName());
+        }
+
+        if (userDto.getLastName() != null) {
+            userEntity.setLastName(userDto.getLastName());
+        }
+
+        userRepository.save(userEntity);
+
+        UserDto returnValue = new UserDto();
+        BeanUtils.copyProperties(userEntity, returnValue);
+
+        return returnValue;
+    }
+
+    @Override
+    public UserDto deleteUser(String id) {
+
+        UserEntity userEntity = userRepository.findByUserId(id);
+
+        if (userEntity == null) throw new UsernameNotFoundException(id);
+
+        UserDto returnValue = new UserDto();
+        BeanUtils.copyProperties(userEntity, returnValue);
+
+        userRepository.delete(userEntity);
+
         return returnValue;
     }
 
