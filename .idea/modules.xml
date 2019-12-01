@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/hello-rest-api/hello-rest-api.iml" filepath="$PROJECT_DIR$/hello-rest-api/hello-rest-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello-rest-api/hello-rest-api (1) (dbelousov.backend).iml" filepath="$PROJECT_DIR$/hello-rest-api/hello-rest-api (1) (dbelousov.backend).iml" />
+    </modules>
+  </component>
+</project>
