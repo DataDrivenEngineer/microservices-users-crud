@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
-public class HelloRestApiApplication {
+public class HelloRestApiApplication{
 
 	public static void main(String[] args) {
 		SpringApplication.run(HelloRestApiApplication.class, args);
@@ -21,5 +21,4 @@ public class HelloRestApiApplication {
 	public SpringApplicationContext springApplicationContext() {
 		return new SpringApplicationContext();
 	}
-
 }
