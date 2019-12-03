@@ -13,7 +13,8 @@ In order to get access to API endpoints, it is necessary to sign up & login to a
 * You can sign up via `http://localhost:8080/hello-rest-api/users` endpoint by sending JSON or XML payload, for example:
 
 
- 	{
+
+{
      "firstName": "Jon",
      "lastName": "Doe",
      "email": "test111@test.com",
