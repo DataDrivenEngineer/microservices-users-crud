@@ -14,12 +14,12 @@ In order to get access to API endpoints, it is necessary to sign up & login to a
 
 
 
-{
+`{
      "firstName": "Jon",
      "lastName": "Doe",
      "email": "test111@test.com",
      "password": "123"
-     }
+     }`
  
  Successfull response should look like below:
  
@@ -33,10 +33,10 @@ In order to get access to API endpoints, it is necessary to sign up & login to a
 * You can login by sending credentials in JSON or XML payload to `http://localhost:8080/hello-rest-api/users/login` like below:
 
 
-    {
+`    {
 	 "email": "test111@test.com",
 	 "password": "123"
-    }
+    }`
 
 Successful response should contain the JWT token in response header which can then be used for accessing protected endpoints:
 
