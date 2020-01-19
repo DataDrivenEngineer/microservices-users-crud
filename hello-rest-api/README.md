@@ -2,8 +2,6 @@
 
 #### Description
 
-Initial purpose of this project is to learn microservices development by doing.
-
 This app represents secure RESTful API endpoints for basic operations with application users: Create, Read, Update & Delete.
 
 #### Authentication & Authorization Process
